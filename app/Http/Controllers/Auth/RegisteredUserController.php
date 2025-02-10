@@ -35,6 +35,19 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        // only certain email domains are allowed
+        $domain = explode('@', $request->get('email'))[1];
+        if (!in_array($domain, [
+            'lacoxconsulting.com',
+            'tntsecuritysolutions.com',
+            'badgehirecs.com',
+            'legacybuilders21.com',
+        ])) {
+            return back(403)->withErrors([
+                'email' => "This email is not allowed. Please use one of your company provided emails."
+            ]);
+        }
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
