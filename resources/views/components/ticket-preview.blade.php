@@ -1,8 +1,8 @@
 
 
-<div class="flex flex-col bg-neutral-700 p-4 rounded-md">
+<div class="flex flex-col bg-neutral-100 dark:bg-neutral-700 p-4 rounded-md hover:cursor-pointer">
     <div class="flex justify-between items-center mb-2">
-        <p class="w-fit px-1 py-1/2 rounded-md bg-neutral-300 text-sm">{{ $dueDate }}</p>
+        <p class="w-fit px-1 py-1/2 rounded-md dark:bg-neutral-300 text-sm">{{ $dueDate }}</p>
         <p class="w-fit px-1 py-1/2 rounded-md {{ $resolved ? "bg-green-500" : "bg-yellow-400" }} text-sm">{{ $resolved ? "Closed" : "Open" }}</p>
     </div>
 
