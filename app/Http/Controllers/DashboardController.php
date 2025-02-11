@@ -16,6 +16,8 @@ class DashboardController extends Controller
 
         // get any notifications the user has
 
+        // depending on the user role show assigned tickets or some other dashboard layout
+
         return view('dashboard')
             ->with('data', $data);
     }

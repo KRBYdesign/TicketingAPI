@@ -29,6 +29,8 @@ return new class extends Migration
             $table->timestamp('resolved_date')->nullable();
             $table->integer('priority')->default(0);
 
+            // Todo at some point accept up to 3 attachments for the tickets
+
             // Created and updated timestamp
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('modified_at')->useCurrent()->useCurrentOnUpdate();
